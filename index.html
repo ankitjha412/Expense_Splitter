@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Expense Splitter</h1>
+        </header>
+
+        <form id="expenseForm">
+            <h2>Add People</h2>
+            <label for="personName">Person's Name:</label>
+            <input type="text" id="personName" placeholder="Enter name" required>
+            <button type="button" onclick="addPerson()">Add Person</button>
+            
+            <!-- List of people with remove buttons -->
+            <ul id="peopleList"></ul>
+
+            <h2>Add an Expense</h2>
+            <label for="description">Description:</label>
+            <input type="text" id="description" required><br>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" required><br>
+
+            <label for="payer">Paid by:</label>
+            <select id="payer" required></select><br>
+
+            <label for="people">Split between (select multiple):</label>
+            <select id="people" multiple required></select><br>
+
+            <button type="button" onclick="addExpense()">Add Expense</button>
+        </form>
+
+        <section id="expenseList">
+            <h2>Expenses</h2>
+            <ul id="expenses"></ul>
+        </section>
+
+        <section id="summary">
+            <h2>Summary</h2>
+            <button type="button" onclick="calculateSplit()">Calculate Split</button>
+            <button type="button" onclick="resetExpenses()">Reset</button>
+            <div id="results"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
